@@ -122,3 +122,11 @@ Jeżeli po edycji `config.txt` Batocera nie startuje, włóż kartę microSD do 
 - [Batocera — Raspberry Pi power switches](https://wiki.batocera.org/add_powerdevices_rpi_only)
 - [Batocera — Editing the boot partition](https://wiki.batocera.org/edit_boot_partition)
 - [Raspberry Pi — Overlay and parameter reference](https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README)
+
+## Osobny EXIT / Separate EXIT
+
+POWER pozostaje na BTN SHIM-a. Osobny przycisk EXIT podłącza się do **D26 (BCM GPIO26, fizyczny pin 37)** i wolnego **GND** (np. pin 34). GPIO4 i GPIO17 nadal należą do SHIM-a. Nie łącz EXIT do napięcia zasilania; program ustawia wejście z pull-up. Odłącz zasilacze przed podłączaniem.
+
+POWER remains on SHIM BTN. A separate EXIT switch connects **BCM GPIO26 (D26, physical pin 37)** to a free **GND**, e.g. physical pin 34. GPIO4/17 remain reserved for SHIM. Do not connect EXIT to a voltage rail; its service enables the input pull-up. Disconnect power before wiring.
+
+[Instrukcja PL i kod](https://github.com/lszumilak/retrogrzmot-return-button) · [English](https://github.com/lszumilak/retrogrzmot-return-button/blob/main/README.en.md) · [Schemat / diagram](https://retrogrzmot.pages.dev/downloads/exit-button/wiring.svg)
